@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Warm Intro Finder — Alumni Path Finder</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/style.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/vis-network/9.1.9/standalone/umd/vis-network.min.js"></script>
+</head>
+<body>
+<canvas id="bgCanvas" aria-hidden="true"></canvas>
+
+<header>
+  <p class="eyebrow">Graph-powered · CognoDB</p>
+  <h1>Warm Intro Finder</h1>
+  <p>Chart the shortest path through your network to anyone at your dream company</p>
+</header>
+
+<nav>
+  <button class="tab-btn active" data-tab="pathTab">Find Path</button>
+  <button class="tab-btn" data-tab="networkTab">Explore Network</button>
+  <button class="tab-btn" data-tab="insightsTab">Insights</button>
+  <button class="tab-btn" data-tab="skillTab">Search by Skill</button>
+  <button class="tab-btn" data-tab="addTab">Add Person</button>
+</nav>
+
+<main>
+  <div id="statusBanner"></div>
+
+  <!-- FIND PATH TAB -->
+  <div class="tab active" id="pathTab">
+    <div class="card">
+      <h2>Find a warm intro path</h2>
+      <label for="fromPerson">From</label>
+      <select id="fromPerson"></select>
+      <label for="targetCompany">Target company</label>
+      <select id="targetCompany"></select>
+      <button class="primary" id="findPathBtn">Find shortest path</button>
+      <div id="pathResult"></div>
+    </div>
+    <div class="card">
+      <h2>Recommended connectors</h2>
+      <p class="hint">People from your college, sharing skills with you, already at your target company</p>
+      <div id="recResult" class="empty">Run a path search above to see recommendations.</div>
+    </div>
+  </div>
+
+  <!-- NETWORK TAB -->
+  <div class="tab" id="networkTab">
+    <div class="card">
+      <h2>Network at a glance</h2>
+      <div id="statsBar"><div class="loading">Loading network stats...</div></div>
+    </div>
+    <div class="card">
+      <div class="card-head">
+        <h2>Live network graph</h2>
+        <button class="ghost-btn" id="resetGraphBtn">Show full graph</button>
+      </div>
+      <p class="hint">Every node and relationship currently in CognoDB, rendered live. Click any node to trace its connections, hover an edge to see the relationship type, and finding a path highlights it here.</p>
+      <div id="networkView"></div>
+      <div class="legend">
+        <span><span class="dot" style="background:#e4e7f7"></span>Person</span>
+        <span><span class="dot" style="background:#7fb69e"></span>Company</span>
+        <span><span class="dot" style="background:#c98a8a"></span>College</span>
+        <span><span class="dot" style="background:#a78bda"></span>Skill</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- INSIGHTS TAB -->
+  <div class="tab" id="insightsTab">
+    <div class="card">
+      <h2>Top connectors</h2>
+      <p class="hint">People ranked by how many others in the network they know directly &mdash; the best hubs for a warm intro</p>
+      <div id="leaderboardResult"><div class="loading">Ranking connectors...</div></div>
+    </div>
+    <div class="card">
+      <h2>Mutual connections</h2>
+      <p class="hint">Pick two people to see who connects them, shared skills, and shared alma mater</p>
+      <label for="mutualA">Person A</label>
+      <select id="mutualA"></select>
+      <label for="mutualB">Person B</label>
+      <select id="mutualB"></select>
+      <button class="primary" id="mutualBtn">Compare</button>
+      <div id="mutualResult" style="margin-top: 10px;"></div>
+    </div>
+  </div>
+
+  <!-- SKILL SEARCH TAB -->
+  <div class="tab" id="skillTab">
+    <div class="card">
+      <h2>Find people by skill</h2>
+      <label for="skillSelect">Skill</label>
+      <select id="skillSelect"></select>
+      <button class="primary" id="skillSearchBtn">Search</button>
+      <div id="skillResult" style="margin-top: 14px;"></div>
+    </div>
+  </div>
+
+  <!-- ADD PERSON TAB -->
+  <div class="tab" id="addTab">
+    <div class="card">
+      <h2>Add yourself or a connection</h2>
+      <label for="newName">Name</label>
+      <input id="newName" placeholder="e.g. Arjun Kumar" />
+      <label for="newRole">Role</label>
+      <input id="newRole" placeholder="e.g. SDE-1" />
+      <label for="newCollege">College</label>
+      <input id="newCollege" placeholder="e.g. VNR VJIET" />
+      <label for="newCompany">Company (optional)</label>
+      <input id="newCompany" placeholder="e.g. Amazon" />
+      <label for="newSkills">Skills (comma separated)</label>
+      <input id="newSkills" placeholder="e.g. React, Node.js" />
+      <button class="primary" id="addPersonBtn">Add person</button>
+      <div id="addPersonResult" style="margin-top: 10px;"></div>
+    </div>
+    <div class="card">
+      <h2>Connect two people</h2>
+      <label for="connFrom">From</label>
+      <select id="connFrom"></select>
+      <label for="connTo">To</label>
+      <select id="connTo"></select>
+      <label for="connContext">Context (optional)</label>
+      <input id="connContext" placeholder="e.g. college friends" />
+      <button class="primary" id="addConnBtn">Add connection</button>
+      <div id="addConnResult" style="margin-top: 10px;"></div>
+    </div>
+  </div>
+</main>
+
+<script src="/js/bg-network.js"></script>
+<script src="/js/app.js"></script>
+</body>
+</html>
