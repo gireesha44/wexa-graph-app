@@ -7,7 +7,7 @@ Built on **CognoDB** (Bolt/openCypher, Neo4j driver-compatible), Node.js/Express
 
 ## Demo
 
-- **Live app:** _[add hosted URL here after deploying]_
+- **Live app:** https://wexa-graph-app-bq9x.onrender.com/
 - **Screen recording:** _[add a 1–2 min walkthrough link here — Find Path → View on graph → Insights]_
 
 ## Why a graph database?
