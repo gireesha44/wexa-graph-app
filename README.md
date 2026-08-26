@@ -203,17 +203,22 @@ show off, not just a single trivial example.
 
 _Replace each placeholder below with an actual screenshot before submitting._
 
-**Find Path** — a shortest-path result, chain of names, and the recommended-connectors panel
-`![Find Path](docs/screenshots/find-path.png)`
+**Find Path** 
+<img width="1917" height="880" alt="image" src="https://github.com/user-attachments/assets/6783728c-51a5-4b68-acba-297fc8465e27" />
 
-**Explore Network** — the live graph with the stats strip visible
-`![Explore Network](docs/screenshots/explore-network.png)`
+**Explore Network**
+<img width="1590" height="862" alt="image" src="https://github.com/user-attachments/assets/3230d965-3a79-43c1-8225-10fe2880fc19" />
 
-**Path highlighted on the graph** — result of clicking "View this path on the graph →"
-`![Path highlighted](docs/screenshots/path-highlighted.png)`
+
+**Path highlighted on the graph** 
+<img width="1836" height="870" alt="image" src="https://github.com/user-attachments/assets/da7c0608-14e1-445f-8557-4a18f4f069a6" />
 
 **Insights** — the top-connectors leaderboard and a mutual-connections result
-`![Insights](docs/screenshots/insights.png)`
+<img width="1142" height="862" alt="image" src="https://github.com/user-attachments/assets/f829edd8-ddf2-4fb3-aec0-f16d46e18b24" />
+
+**Search by skill**
+<img width="1000" height="616" alt="image" src="https://github.com/user-attachments/assets/914462ce-78fb-4c8b-b0f5-764572f12915" />
 
 **Add Person** — the add-person / add-connection form
-`![Add Person](docs/screenshots/add-person.png)`
+<img width="892" height="798" alt="image" src="https://github.com/user-attachments/assets/8b64f05b-98f3-4066-b3e7-2560421a9e35" />
+
